@@ -15,7 +15,9 @@
 <body>
 
 <!--    navbar-->
-
+<?php
+$object = new Dbh();
+?>
 
 
 
