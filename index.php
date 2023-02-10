@@ -17,7 +17,6 @@
 <!--    navbar-->
 
 
-<h1>database Application</h1>
 
 
 </nav>
