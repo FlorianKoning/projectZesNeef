@@ -21,7 +21,6 @@ class Dbh
             // verbind met de database
             $dbConnectie = new PDO("mysql:host =" . $this->IP . ";dbname=" . $this->DBName, $this->userName, $this->password);
             $dbConnectie->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            echo "database connected";
             return $dbConnectie;
         } catch (PDOException $e) {
             // maakt de alert box

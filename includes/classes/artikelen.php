@@ -19,9 +19,9 @@ class Test extends Dbh {
 
         // hier ook gewoon fetch voor de zelfde reden
         $sql = "SELECT * FROM artikelen WHERE artId = ?";
-        $stmst = $this->connect()->prepare($sql);
-        $stmst->execute([$ID]);
-        $ids = $stmst->fetchAll();
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$ID]);
+        $ids = $stmt->fetchAll();
 
         foreach($ids as $id) {
             echo $id['artOmschrijving'] . '<br>';
