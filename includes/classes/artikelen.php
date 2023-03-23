@@ -1,7 +1,7 @@
 <?php
 include_once 'includes/classes/dbh.php';
 
-class Test extends Dbh {
+class Artikelen extends Dbh {
     
     // reads alle omschrijvingen van de artikelen
     public function getOmschrijving() {
