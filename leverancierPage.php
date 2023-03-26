@@ -16,7 +16,7 @@ include_once 'includes/classes/leverancier.php'
 
 <?php
 $object = new Leverancier();
-$object->deleteLeverancier(4);
+$object->setLevId();
 ?>
 
 </body>
