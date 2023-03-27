@@ -14,10 +14,26 @@ include_once 'includes/classes/leverancier.php'
 </head>
 <body>
 
-<?php
-$object = new Leverancier();
-$object->setLevId();
-?>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" aria-current="page" href="index.php">Home</a>
+        <a class="nav-link" href="artikelenPage.php">Artikelen</a>
+        <a class="nav-link active" href="leverancierPage.php">Leverancier</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="logoContainer">
+  <img src="./includes/images/Bas-Logo.png" alt="Bas Logo">
+  <h3>Boodschappenservice Bas Brengt Boodschappen</h3>
+</div>
 
 </body>
 </html>
