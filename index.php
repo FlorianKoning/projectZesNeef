@@ -14,7 +14,7 @@ include_once 'includes/classes/artikelen.php';
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +29,11 @@ include_once 'includes/classes/artikelen.php';
     </div>
   </div>
 </nav>
+
+<div class="logoContainer">
+  <img src="./includes/images/Bas-Logo.png" alt="Bas Logo">
+  <h3>Boodschappenservice Bas Brengt Boodschappen</h3>
+</div>
 
 </body>
 
