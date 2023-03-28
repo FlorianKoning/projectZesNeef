@@ -14,6 +14,7 @@ include_once 'includes/classes/artikelen.php';
 </head>
 <body>
 
+<!-- navbar   -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -23,17 +24,19 @@ include_once 'includes/classes/artikelen.php';
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-        <a class="nav-link" href="artikelenPage.php">Artikelen</a>
+        <a class="nav-link" href="magazijnMeesterMenu.php">magazijnMeester</a>
         <a class="nav-link" href="leverancierPage.php">Leverancier</a>
       </div>
     </div>
   </div>
 </nav>
 
+<!-- logo + bedrijf naam  -->
 <div class="logoContainer">
   <img src="./includes/images/Bas-Logo.png" alt="Bas Logo">
   <h3>Boodschappenservice Bas Brengt Boodschappen</h3>
 </div>
+
 
 </body>
 

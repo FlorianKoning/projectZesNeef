@@ -1,9 +1,11 @@
+<!-- Florian Koning -->
+
 <?php
-include_once 'includes/classes/artikelen.php'
+include_once 'includes/classes/artikelen.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html5 lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -23,7 +25,7 @@ include_once 'includes/classes/artikelen.php'
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" aria-current="page" href="index.php">Home</a>
-        <a class="nav-link active" href="artikelenPage.php">Artikelen</a>
+        <a class="nav-link active" href="magazijnMeesterMenu.php">magazijnMeester</a>
         <a class="nav-link" href="leverancierPage.php">Leverancier</a>
       </div>
     </div>
@@ -35,10 +37,10 @@ include_once 'includes/classes/artikelen.php'
   <h3>Boodschappenservice Bas Brengt Boodschappen</h3>
 </div>
 
-   <?php
-    $object = new Artikelen();
-    $object->getOmschrijving();
-   ?>
+<div class="middelStuk">
+  <div class="tabelContainer">
+  </div>
+</div>
 
 </body>
-</html>
+</html5

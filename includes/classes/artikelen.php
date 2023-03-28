@@ -1,26 +1,43 @@
+<!-- Florian Koning -->
+
 <?php
 include_once 'includes/classes/dbh.php';
 
 class Artikelen extends Dbh {
+    public string $artOmschrijving;
     
     // reads alle omschrijvingen van de artikelen
     public function getOmschrijving() {
 
         $sql = "SELECT * FROM artikelen";
-        $stmst = $this->connect()->query($sql);
+        $stmt = $this->connect()->query($sql);
         // gebruikt hier fetch omdat er toch geen user input is, dus kan er geen SQL injectie komen 
-        while ($row = $stmst->fetch()) {
+        while ($row = $stmt->fetch()) {
             echo $row['artOmschrijving'] . '<br>';
         }
     }
 
+    public function getTabelById($artId) {
+       // hier ook gewoon fetch voor de zelfde reden
+       $sql = "SELECT * FROM artikelen WHERE artId = ?";
+       $stmt = $this->connect()->prepare($sql);
+       $stmt->execute([$artId]);
+       $ids = $stmt->fetchAll();
+
+        foreach ($ids as $id) {
+            echo "<td>" . $id["artId"] . "</td><td>" . $id["artOmschrijving"] . "</td><td>" . $id["artInkoop"] . "</td><td>" 
+                . $id["artVerkoop"] . "</td><td>" . $id["artMinVoorraad"] . "</td><td>" . $id["artMaxVoorraad"] . "</td><td>" 
+                    . $id["artLocatie"] . "</td><td>" . $id["levId"] . "</td>";
+        }
+    }
+
     // reads alle omschrijvingen van de artikelen van de gegeven ID
-    public function getOmschrijvingStmt($ID) {
+    public function getOmschrijvingID($levId) {
 
         // hier ook gewoon fetch voor de zelfde reden
         $sql = "SELECT * FROM artikelen WHERE artId = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$ID]);
+        $stmt->execute([$levId]);
         $ids = $stmt->fetchAll();
 
         foreach($ids as $id) {

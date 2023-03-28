@@ -1,5 +1,7 @@
 <?php
 
+// Florian Koning
+
 class Dbh
 {
     // variabelen

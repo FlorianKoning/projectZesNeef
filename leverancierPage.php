@@ -1,3 +1,5 @@
+<!-- Florian Koning -->
+
 <?php
 include_once 'includes/classes/leverancier.php'
 ?>
@@ -23,7 +25,7 @@ include_once 'includes/classes/leverancier.php'
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" aria-current="page" href="index.php">Home</a>
-        <a class="nav-link" href="artikelenPage.php">Artikelen</a>
+        <a class="nav-link" href="magazijnMeesterMenu.php">magazijnMeester</a>
         <a class="nav-link active" href="leverancierPage.php">Leverancier</a>
       </div>
     </div>
