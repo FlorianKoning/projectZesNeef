@@ -45,7 +45,7 @@ include_once 'includes/classes/artikelen.php';
           <a class="btn btn-outline-light" href="magazijnMeesterTabellen.php" role="buttton">Tabelen Aflezen</a>
           <a class="btn btn-outline-light" href="magazijnMeesterTabelByID.php" role="buttton">Tabel bij id</a>
           <a class="btn btn-outline-light" href="#" role="buttton">Create Tabel</a>
-          <a class="btn btn-outline-light" href="#" role="buttton">Update Tabel</a>
+          <a class="btn btn-outline-light" href="magazijnMeesterUpdate.php" role="buttton">Update Tabel</a>
         </div>
 
         <div class="textContainer">

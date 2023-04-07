@@ -22,20 +22,28 @@ class Artikelen extends Dbh
     public function getTabelById($artId)
     {
         // hier ook gewoon fetch voor de zelfde reden
+        $one = 1;
         $sql = "SELECT * FROM artikelen WHERE artId = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$artId]);
         $ids = $stmt->fetchAll();
 
-        foreach ($ids as $id) {
-            echo "<td>" . $id["artId"] . "</td><td>" . $id["artOmschrijving"] . "</td><td>" . $id["artInkoop"] . "</td><td>"
-                . $id["artVerkoop"] . "</td><td>" . $id["artMinVoorraad"] . "</td><td>" . $id["artMaxVoorraad"] . "</td><td>"
-                . $id["artLocatie"] . "</td><td>" . $id["levId"] . "</td>";
+        if ($stmt->rowCount() > 0) {
+            foreach ($ids as $id) {
+                echo "<tr><th scope='row'>" . $one++ . "</th><td>" . $id["artId"] . "</td><td>" . $id["artOmschrijving"] . "</td><td>" . $id["artInkoop"] . "</td><td>"
+                    . $id["artVerkoop"] . "</td><td>" . $id["artMinVoorraad"] . "</td><td>" . $id["artMaxVoorraad"] . "</td><td>"
+                    . $id["artLocatie"] . "</td><td>" . $id["levId"] . "</td>";
+            }   
+        } else if ($artId == NULL){
+            echo "Voer het artiekel id in om een tabel op te zoeken";
+        } else {
+            echo "Kon geen tabel vinden in de database met dat ID";
         }
     }
 
     public function getAlleTabellen()
     {
+        $one = 1;
         $sql = "SELECT * FROM artikelen";
         $stmt = $this->connect()->query($sql);
 
@@ -43,7 +51,7 @@ class Artikelen extends Dbh
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr><td>" . $row["artId"] . "</td><td>" . $row["artOmschrijving"] . "</td><td>" . $row["artInkoop"] . "</td><td>"
                     . $row["artVerkoop"] . "</td><td>" . $row["artMinVoorraad"] . "</td><td>" . $row["artMaxVoorraad"] . "</td><td>"
-                    . $row["artLocatie"] . "</td><td>" . "</td></tr>";
+                    . $row["artLocatie"] . "</td><td>" . $one++ . "</td></tr>";
             }
         } else {
             echo "No results";

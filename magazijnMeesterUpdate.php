@@ -43,27 +43,7 @@ include_once 'includes/classes/artikelen.php';
             <div class="tabelContainer">
                 <div class="buttonContainer">
                     <a class="btn btn-outline-light" href="magazijnMeesterMenu.php" role="buttton">Terug</a>
-                </div>
-                <table class="table" style="color: #fff;">
-                    <thead>
-                        <tr>
-                            <th scope="col">artId</th>
-                            <th scope="col">artOmschrijving</th>
-                            <th scope="col">artInkoop</th>
-                            <th scope="col">artVerkoop</th>
-                            <th scope="col">artMinVoorraad</th>
-                            <th scope="col">artMaxVoorraad</th>
-                            <th scope="col">artLocatie</th>
-                            <th scope="col">#</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $object = new Artikelen();
-                        $object->getAlleTabellen();
-                        ?>
-                    </tbody>
-                </table>
+                </div>>
             </div>
         </div>
 

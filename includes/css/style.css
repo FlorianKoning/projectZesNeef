@@ -174,7 +174,7 @@ form .text h3 a:hover {
 /* magazijnmedewerker css */
 .tabelContainer {
     display: flex;
-    width: 850px;
+    min-width: 750px;
     min-height: 200px;
     border-radius: 5px;
     border: 1.5px solid #1c2128;

@@ -39,10 +39,10 @@ include_once 'includes/classes/artikelen.php';
 
 <div class="middelStuk">
   <div class="tabelContainer">
-    <form class="d-flex" role="search">
+    <form class="d-flex" role="search" method="POST">
         <button type="button" class="btn btn-outline-light" style="margin-right: 500px;"><a href="magazijnMeesterMenu.php" style="text-decoration: none; color: white;">Terug</a></button>
-        <input class="form-control me-2" name="inputID" type="search" placeholder="Search" aria-label="Search" style="border: 1.5px solid #1c2128; width: 200px;">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" name="inputID" type="search" placeholder="Type hier het artikel id" aria-label="Search" accept=""style="border: 1.5px solid #1c2128; width: 200px;">
+        <button class="btn btn-outline-success" type="submit" value="submit" name="submit">Zoek</button>
       </form>
     <table class="table" style="color: #fff;  ">
       <thead>
@@ -59,14 +59,14 @@ include_once 'includes/classes/artikelen.php';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <?php
-          $inputID = 1;
-          $object = new Artikelen();
-          $object->getTabelById($inputID);
-          ?>
-        </tr>
+        <?php
+        $inputID = NULL;
+        if (isset($_POST['submit'])) {
+          $inputID = $_POST['inputID'];
+        } 
+        $object = new Artikelen();
+        $object->getTabelById($inputID);
+        ?>
       </tbody>
     </table>
   </div>
