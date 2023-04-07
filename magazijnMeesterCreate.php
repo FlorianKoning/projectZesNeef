@@ -72,10 +72,6 @@ include_once 'includes/classes/artikelen.php';
                         <span class="input-group-text" id="basic-addon1">levId</span>
                         <input type="text" class="form-control" placeholder="levId" aria-label="levId" aria-describedby="basic-addon1" name="levId" required>
                     </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">artId</span>
-                        <input type="text" class="form-control" placeholder="artId" aria-label="artId" aria-describedby="basic-addon1" name="artId" required>
-                    </div>
                 </form>
 
                 <?php
@@ -86,7 +82,6 @@ include_once 'includes/classes/artikelen.php';
                 $inputArtMaxVoorraad = NULL;
                 $inputArtLocatie = NULL;
                 $inputLevId = NULL;
-                $inputArtId = NULL;
 
                 $object = new Artikelen();
                 if (isset($_POST['submit'])) {
@@ -97,14 +92,10 @@ include_once 'includes/classes/artikelen.php';
                     $inputArtMaxVoorraad = $_POST['artMaxVoorraad'];
                     $inputArtLocatie = $_POST['artLocatie'];
                     $inputLevId = $_POST['levId'];
-                    $inputArtId = $_POST['artId'];
 
-                    $object->updateAllArtikelen($inputArtOmschrijving, $inputArtInkoop, $inputArtVerkoop, $inputArtMinVoorraad, $inputArtMaxVoorraad, $inputArtLocatie, $inputLevId, $inputArtId);
+                    $object->CreateArtikel($inputArtOmschrijving, $inputArtInkoop, $inputArtVerkoop, $inputArtMinVoorraad, $inputArtMaxVoorraad, $inputArtLocatie, $inputLevId);
                 }
-
-
                 ?>
-
             </div>
         </div>
 

@@ -33,8 +33,8 @@ class Artikelen extends Dbh
                 echo "<tr><th scope='row'>" . $one++ . "</th><td>" . $id["artId"] . "</td><td>" . $id["artOmschrijving"] . "</td><td>" . $id["artInkoop"] . "</td><td>"
                     . $id["artVerkoop"] . "</td><td>" . $id["artMinVoorraad"] . "</td><td>" . $id["artMaxVoorraad"] . "</td><td>"
                     . $id["artLocatie"] . "</td><td>" . $id["levId"] . "</td>";
-            }   
-        } else if ($artId == NULL){
+            }
+        } else if ($artId == NULL) {
             echo "Voer het artiekel id in om een tabel op te zoeken";
         } else {
             echo "Kon geen tabel vinden in de database met dat ID";
@@ -74,7 +74,7 @@ class Artikelen extends Dbh
     }
 
     // creates een nieuwe tabel voor artikelen
-    public function setOmschrijvingStmt($artOmschrijving, $artInkoop, $artVerkoop, $artMinVoorraad, $artMaxVoorraad, $artLocatie, $levId)
+    public function CreateArtikel($artOmschrijving, $artInkoop, $artVerkoop, $artMinVoorraad, $artMaxVoorraad, $artLocatie, $levId)
     {
 
         // maakt SQL code voor de databas en gebruikt prepare zodat er geen SQL injectie kan gedaan worden
@@ -85,9 +85,9 @@ class Artikelen extends Dbh
         // doet de execute en checkt of de execute is goed gegaan en console logged of het wel of niet goed is gegaan
         $stmt->execute([$artOmschrijving, $artInkoop, $artVerkoop, $artMinVoorraad, $artMaxVoorraad, $artLocatie, $levId]);
         if ($stmt->execute()) {
-            echo "<script>console.log('nieuw artikel toegevoegt aan de database')</script>";
+            echo "nieuwe tabel aangemaakt";
         } else {
-            echo "<script>console.log('nieuw artikel kon niet worden toegevoegt aan de database')</script>";
+            echo "Mislukt";
         }
     }
 
